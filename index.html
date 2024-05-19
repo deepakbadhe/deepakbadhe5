@@ -14,23 +14,7 @@
     <script>
         function submitEmail() {
             var email = document.getElementById('emailInput').value;
-            var scriptUrl = 'https://script.google.com/macros/s/AKfycbwFeSkxs1OX0tfooadoy19yB44GK1k3nNC4WzBtG25RTZiC6H3hxxZtwa0IvVTUt7uO/exec?email=' + encodeURIComponent(email);
-            fetch(scriptUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Display the response on the webpage
-                    var responseContainer = document.getElementById('responseContainer');
-                    responseContainer.innerHTML = 'Script response: ' + JSON.stringify(data);
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                    // Handle errors
-                });
+            window.location.href = 'https://script.google.com/macros/s/AKfycbwFeSkxs1OX0tfooadoy19yB44GK1k3nNC4WzBtG25RTZiC6H3hxxZtwa0IvVTUt7uO/exec?email=' + encodeURIComponent(email);
         }
     </script>
 </body>
